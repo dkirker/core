@@ -81,6 +81,9 @@ async def async_get_type(hass, cloud_id, install_code, host):
     if (
         "NetworkInfo" in response
         and response["NetworkInfo"].get("ModelId") == "Z109-EAGLE"
+    ) or (
+        "device_model_id" in response
+        and response["device_model_id"] == "Z109-EAGLE"
     ):
         return TYPE_EAGLE_100, None
 
